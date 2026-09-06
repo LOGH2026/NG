@@ -1,9 +1,9 @@
-# Northwoods Hunter v3
+# Northwoods Hunter v4
 
-Bug fixes:
-- Normal mouse cursor is visible on the start/end screen.
-- Crosshair cursor only appears while actively hunting.
-- Rendering loop stays alive so the game no longer drops to a black screen.
-- Start / restart transitions are more reliable.
-
-Replace index.html, style.css, and game.js in the same GitHub repo.
+Fixes and upgrades:
+- Cursor is explicitly visible on Start Hunt and Round Complete overlays.
+- Cursor is hidden only during active gameplay.
+- Deer anatomy and shading are substantially more detailed.
+- More natural legs, hooves, muzzle, ears, eye, fur texture, tail, and antlers.
+- Rifle has a shaped walnut stock, receiver, bolt, trigger group, tapered barrel, scope rings, turret, and lens glass.
+- Unlimited ammunition and 5-harvest round ending remain unchanged.
