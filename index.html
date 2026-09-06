@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Northwoods Hunter</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <main class="game-shell">
+    <header class="hud">
+      <div>
+        <div class="eyebrow">NORTHWOODS HUNTER</div>
+        <div class="hud-row">
+          <span>Score <strong id="score">0</strong></span>
+          <span>Harvests <strong id="harvests">0 / 5</strong></span>
+          <span>Accuracy <strong id="accuracy">0%</strong></span>
+        </div>
+      </div>
+      <div class="weapon-panel">
+        <div class="weapon-name">.308 Bolt-Action Hunting Rifle</div>
+        <div>Unlimited Ammo</div>
+      </div>
+    </header>
+
+    <section class="game-wrap">
+      <canvas id="game" width="1280" height="720" aria-label="Hunting game area"></canvas>
+
+      <div id="startPanel" class="overlay">
+        <div class="panel">
+          <h1 id="panelTitle">Northwoods Hunter</h1>
+          <p id="panelText">Move your mouse to aim and left-click to fire. Harvest 5 animals to complete the round.</p>
+          <button id="startBtn">Start Hunt</button>
+        </div>
+      </div>
+
+      <div id="message" class="message"></div>
+    </section>
+
+    <footer class="controls">
+      <span>Mouse: Aim</span>
+      <span>Left Click: Fire</span>
+      <span>Esc: Pause</span>
+      <span>Goal: 5 Harvests</span>
+    </footer>
+  </main>
+
+  <script src="game.js"></script>
+</body>
+</html>
