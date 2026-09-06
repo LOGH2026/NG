@@ -1,0 +1,163 @@
+* { box-sizing: border-box; }
+:root {
+  color-scheme: dark;
+  --bg: #0a0c0a;
+  --panel: #101410;
+  --line: #293129;
+  --text: #edf0eb;
+  --muted: #aab1ab;
+  --accent: #bda475;
+}
+html, body {
+  margin: 0;
+  min-height: 100%;
+  background: radial-gradient(circle at top, #1a221b 0%, #0a0c0a 60%);
+  color: var(--text);
+  font-family: Inter, ui-sans-serif, system-ui, -apple-system, Segoe UI, sans-serif;
+}
+body { padding: 18px; }
+.game-shell { width: min(1420px, 100%); margin: 0 auto; }
+
+.hud, .controls {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 18px;
+  border: 1px solid var(--line);
+  background: rgba(15, 19, 15, .98);
+}
+
+.hud {
+  padding: 12px 16px;
+  border-radius: 12px 12px 0 0;
+}
+
+.eyebrow {
+  color: var(--accent);
+  font-weight: 800;
+  letter-spacing: .18em;
+  font-size: 12px;
+  margin-bottom: 5px;
+}
+
+.hud-row {
+  display: flex;
+  gap: 18px;
+  color: var(--muted);
+  font-size: 14px;
+}
+.hud-row strong { color: var(--text); }
+
+.weapon-panel {
+  min-width: 250px;
+  text-align: right;
+  font-weight: 800;
+}
+.weapon-name {
+  color: var(--text);
+  font-size: 16px;
+}
+.weapon-sub {
+  color: var(--muted);
+  font-size: 12px;
+  margin-top: 2px;
+}
+
+.game-wrap {
+  position: relative;
+  overflow: hidden;
+  border-left: 1px solid var(--line);
+  border-right: 1px solid var(--line);
+  background: #111;
+}
+
+canvas {
+  display: block;
+  width: 100%;
+  height: auto;
+  aspect-ratio: 16 / 9;
+}
+
+.controls {
+  justify-content: center;
+  flex-wrap: wrap;
+  padding: 9px 14px;
+  color: var(--muted);
+  font-size: 12px;
+  border-radius: 0 0 12px 12px;
+}
+
+.overlay {
+  position: absolute;
+  inset: 0;
+  display: grid;
+  place-items: center;
+  background: rgba(4, 7, 5, .58);
+  backdrop-filter: blur(3px);
+}
+
+.overlay.hidden { display: none; }
+
+.panel {
+  width: min(520px, calc(100% - 32px));
+  padding: 30px;
+  border: 1px solid rgba(255,255,255,.14);
+  border-radius: 14px;
+  background: rgba(12, 16, 13, .95);
+  text-align: center;
+  box-shadow: 0 22px 80px rgba(0,0,0,.5);
+}
+
+.panel h1 {
+  margin: 0 0 10px;
+  font-size: 34px;
+}
+.panel p {
+  color: var(--muted);
+  line-height: 1.55;
+}
+
+button {
+  border: 1px solid #c3af88;
+  border-radius: 8px;
+  padding: 11px 20px;
+  background: #836a44;
+  color: white;
+  font-weight: 800;
+  cursor: pointer;
+}
+button:hover { filter: brightness(1.08); }
+
+.message {
+  position: absolute;
+  left: 50%;
+  top: 20px;
+  translate: -50% 0;
+  padding: 8px 13px;
+  border-radius: 7px;
+  background: rgba(0,0,0,.72);
+  opacity: 0;
+  transition: opacity .2s ease;
+  pointer-events: none;
+  font-weight: 700;
+}
+.message.show { opacity: 1; }
+
+/* Cursor control */
+body.menu-open,
+body.menu-open * { cursor: default !important; }
+
+body.playing,
+body.playing #gameWrap,
+body.playing canvas { cursor: none !important; }
+
+.overlay,
+.overlay * { cursor: default !important; }
+.overlay button { cursor: pointer !important; }
+
+@media (max-width: 720px) {
+  body { padding: 0; }
+  .hud, .controls { border-radius: 0; }
+  .hud-row { gap: 10px; font-size: 12px; }
+  .weapon-panel { min-width: auto; }
+}
